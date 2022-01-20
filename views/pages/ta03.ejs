@@ -12,14 +12,24 @@
         <h1>
           <%= title %>
         </h1>
-        <p>This is the placeholder for Team Activity 03</p>
       </div>
     </div>
-    <div class="container">
 
+      <form action="/routes/ta03" method="post">
+        <label for="user-input">
+          <input type="text" name="userInput" id="userInput">
+          <input type="submit" value="Search">
+        </label>
+      </form>
+      <div class="container"></div>
+      <% for (let product of products) { %>
+        <div class="product">
+          <h2 class="product-name"><%= product.name %></h2>
+          <img class="product-img" src="<%= product.imageUrl %>" alt="<%= product.tags %>">
+          <p class="product-price">$<%= product.price %></p>
+          <p class="product-desc"><%= product.description %></p>
+        </div>
+      <% } %>
     </div>
-
-
 </body>
-
 </html>
